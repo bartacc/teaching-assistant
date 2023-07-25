@@ -1,0 +1,22 @@
+<% if ( locals.logged ) { %>
+  <%- include('./navbar_v1') %>
+    <% } else{ %>
+      <%- include('./navbar_v3') %>
+        <% }%>
+
+          <% if ( locals.top_message ) { %>
+            <%- locals.top_message %>
+              <% } %>
+                <div>
+                  <h1>Hello! 
+                    <% if ( locals.logged ) { %>
+                      You are logged in!
+                        <% } else{ %>
+                          Please log in.
+                            <% }%>
+                  </h1>
+                </div>
+
+
+
+                <%- include('./footer') %>
