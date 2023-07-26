@@ -23,7 +23,7 @@ export class User extends Model {
     birthday: Date;
 
     @Column
-    gender: Gender;
+    role: Role;
 
     @Column
     country: string;
@@ -38,9 +38,9 @@ export class User extends Model {
     postalCode: string
 }
 
-export enum Gender {
-    Female = 0,
-    Male = 1,
-    Other = 2
+
+export enum Role {
+    Teacher = 0,
+    Student = 1
 }
 

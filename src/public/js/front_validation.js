@@ -16,9 +16,8 @@ const main = document.getElementById("main");
 function createRequestData() {
     let data = Array.from(document.querySelectorAll('#firstName, #lastName, #emailAddress, #password, #phoneNumber, #birthdayDate, #city, #zipcode, #street_and_num, #country'))
     data = data.reduce((acc, input) => ({ ...acc, [input.id]: input.value }), {})
-    if (document.getElementById('femaleGender').checked) { data["gender"] = 0 }
-    else if (document.getElementById('maleGender').checked) { data["gender"] = 1 }
-    else { data["gender"] = 2 }
+    if (document.getElementById('teacherRole').checked) { data["role"] = 0 }
+    else if (document.getElementById('studentRole').checked) { data["role"] = 1 }
     return data;
 }
 
