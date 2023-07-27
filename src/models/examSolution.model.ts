@@ -1,4 +1,4 @@
-import {BelongsTo, Column, ForeignKey, HasMany, Model, Table} from "sequelize-typescript";
+import {BelongsTo, Column, DataType, ForeignKey, HasMany, Model, Table} from "sequelize-typescript";
 import { User } from "./user.model";
 import { Exam } from "./exam.model";
 import { QuestionSolution } from "./questionSolution.model";
@@ -25,13 +25,15 @@ export class ExamSolution extends Model {
     @Column({
         validate: {
             isInt: true,
-            min: 1,
+            min: 0,
             max: 10
         }
     })
     grade: number;
 
-    @Column
+    @Column({
+        type: DataType.STRING(1000)
+    })
     feedback: string;
 
     @HasMany(() => QuestionSolution)

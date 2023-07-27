@@ -22,7 +22,9 @@ export class Question extends Model {
     })
     type: QuestionType;
 
-    @Column
+    @Column({
+        type: DataType.STRING(1000)
+    })
     content: string;
 
     @HasMany(() => Answer)

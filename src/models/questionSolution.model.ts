@@ -1,4 +1,4 @@
-import {BelongsTo, Column, ForeignKey, Model, Table} from "sequelize-typescript";
+import {BelongsTo, Column, DataType, ForeignKey, Model, Table} from "sequelize-typescript";
 import { ExamSolution } from "./examSolution.model";
 import { Answer } from "./answer.model";
 import { Question } from "./question.model";
@@ -19,7 +19,9 @@ export class QuestionSolution extends Model {
     @BelongsTo(() => Question)
     question: Question
 
-    @Column
+    @Column({
+        type: DataType.STRING(1000)
+    })
     solutionContent: string;
 
     @ForeignKey(() => Answer)
@@ -29,6 +31,17 @@ export class QuestionSolution extends Model {
     @BelongsTo(() => Answer)
     chosenAnswer: Answer;
 
-    @Column
+    @Column({
+        validate: {
+            isInt: true,
+            min: 0,
+            max: 10
+        }
+    })
+    grade: number;
+
+    @Column({
+        type: DataType.STRING(1000)
+    })
     feedback: string;
 }

@@ -41,7 +41,7 @@ export const mockUsers: User[]=[
         examSolutions: [
             {
                 submissionDate: new Date(2023, 8, 8),
-                grade: 8,
+                grade: 6,
                 feedback: "Gr8 m8, I r8 8/8!",
                 questionSolutions: [] //This is later filled with data below
             }
@@ -66,6 +66,7 @@ export const mockQuestionsWithSolutions: [Question, QuestionSolution][] = [
 
         QuestionSolution.build({
             solutionContent: "I don't know man",
+            grade: 4,
             feedback: "You'll get there eventually"
         })
     ],
@@ -97,7 +98,72 @@ export const mockQuestionsWithSolutions: [Question, QuestionSolution][] = [
 
         QuestionSolution.build({
             chosenAnswerId: 3, // First answer is at index 0, so here we choose the last answer.
+            grade: 0,
             feedback: "Almost there, first two phases are correct."
+        })
+    ],
+
+    [
+        Question.build({
+            type: QuestionType.MULTIPLE_CHOICE,
+            content: "What is the term for a solution that has a higher concentration of solutes than the cell?",
+            answers: [
+                {
+                    content: "hypotonic",
+                    isCorrectAnswer: false
+                },
+                {
+                    content: "hypertonic",
+                    isCorrectAnswer: true
+                },
+                {
+                    content: "isotonic",
+                    isCorrectAnswer: false
+                },
+                {
+                    content: "none of the above",
+                    isCorrectAnswer: false
+                },
+            ]
+        },
+        {include: Answer}),
+
+        QuestionSolution.build({
+            chosenAnswerId: 0,
+            grade: 0,
+            feedback: "Almost, almost..."
+        })
+    ],
+
+    [
+        Question.build({
+            type: QuestionType.MULTIPLE_CHOICE,
+            content: "What is the difference between diffusion and osmosis?",
+            answers: [
+                {
+                    content: "Osmosis is the movement of water molecules across a selectively permeable membrane, while diffusion is the movement of any molecules across any membrane.",
+                    isCorrectAnswer: true
+                },
+                {
+                    content: "Osmosis is the movement of any molecules across a selectively permeable membrane, while diffusion is the movement of water molecules across any membrane.",
+                    isCorrectAnswer: false
+                },
+                {
+                    content: "Osmosis is the movement of water molecules from an area of low solute concentration to an area of high solute concentration, while diffusion is the movement of solute molecules from an area of high solute concentration to an area of low solute concentration.",
+                    isCorrectAnswer: false
+                },
+                {
+                    content: "Osmosis is the movement of solute molecules from an area of low water concentration to an area of high water concentration, while diffusion is the movement of water molecules from an area of high water concentration to an area of low water concentration.",
+                    isCorrectAnswer: false
+                },
+            ]
+        },
+        {include: Answer}),
+
+        QuestionSolution.build({
+            chosenAnswerId: 0,
+            grade: 10,
+            feedback: "Yeah, you got it!"
         })
     ],
 
@@ -116,7 +182,80 @@ export const mockQuestionsWithSolutions: [Question, QuestionSolution][] = [
 
         QuestionSolution.build({
             solutionContent: "It must first create its DNA",
+            grade: 7,
             feedback: "How does it create it?"
+        })
+    ],
+
+    [
+        Question.build({
+            type: QuestionType.OPEN,
+            content: "State 2 functions of Meiosis",
+            answers: [
+                {
+                    content: "Sexual reproduction and Variation",
+                    isCorrectAnswer: true
+                }
+            ]
+        },
+        {include: Answer}),
+
+        QuestionSolution.build({
+            solutionContent: "Variation and sexual reproduction",
+            grade: 10,
+            feedback: "Great! You might become a biologist one day :)"
+        })
+    ],
+
+    [
+        Question.build({
+            type: QuestionType.MULTIPLE_CHOICE,
+            content: "What happens to the turgor pressure of a plant cell when it is placed in a hypertonic solution?",
+            answers: [
+                {
+                    content: "It increases",
+                    isCorrectAnswer: false
+                },
+                {
+                    content: "It decreases",
+                    isCorrectAnswer: true
+                },
+                {
+                    content: "It stays the same",
+                    isCorrectAnswer: false
+                },
+                {
+                    content: "It depends on the type of plant",
+                    isCorrectAnswer: false
+                },
+            ]
+        },
+        {include: Answer}),
+
+        QuestionSolution.build({
+            chosenAnswerId: 1,
+            grade: 10,
+            feedback: "You're right, it decreases... Just like your chances of failing this subject :)"
+        })
+    ],
+
+    [
+        Question.build({
+            type: QuestionType.OPEN,
+            content: "What happens to an animal cell when it is placed in a hypertonic solution?",
+            answers: [
+                {
+                    content: " It will swell and burst due to the water entering the cell by osmosis.",
+                    isCorrectAnswer: true
+                }
+            ]
+        },
+        {include: Answer}),
+
+        QuestionSolution.build({
+            solutionContent: "It swells and bursts.",
+            grade: 7,
+            feedback: "That's correct. But why?"
         })
     ],
 ]
