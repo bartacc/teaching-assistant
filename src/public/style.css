@@ -1,6 +1,6 @@
 .mainNavbar{
     display: flex;
-    flex-direction: row; 
+    flex-direction: row;
 }
 .navbar-brand{
     display:inline;
@@ -17,7 +17,6 @@
     width: fit-content;
     height: fit-content;
 }
-
 
 .login__main__page{
   margin: auto;
@@ -45,6 +44,113 @@
 }
 
 .active_denger{
-  background-color:red !important; 
+  background-color:red !important;
   color:white !important;
+}
+
+#top-bar {
+  border-bottom-width: 10px;
+  border-bottom-color: black;
+}
+
+#logout-button {
+  margin-left: 915px;
+}
+
+#login-button {
+  margin-left: 915px;
+}
+
+#exam-header {
+  padding-left: 1%;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container > .flex-container {
+  flex-direction: column;
+}
+#exam-review {
+  padding: 10px;
+  align-items: stretch;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+#submission {
+  display: flex;
+  flex-direction: column;
+  object-position: right;
+  margin-left: auto;
+  gap: 7px;
+}
+#default-button {
+  border-radius: 10px;
+  background-image: conic-gradient(from 180deg at 82.04% 107.20%, #FAFAFA  182.4640703201294deg, #FAFAFAA1 360deg);
+  margin-left: auto;
+  margin-top: auto;
+  margin-right: 15px;
+  margin-bottom: auto;
+  border-width: 0px;
+  border-left: 10px;
+  color: black;
+  padding: 5px;
+  text-decoration: none;
+}
+
+#default-button:hover {
+  background-image: conic-gradient(from 90deg at 82.04% 107.20%, #000000  182.4640703201294deg, #000000A1 360deg);
+  color: #FAFAFA;
+}
+
+#new-question-button {
+  border-radius: 10px;
+  background-image: conic-gradient(from 180deg at 82.04% 107.20%, #FAFAFA  182.4640703201294deg, #FAFAFAA1 360deg);
+  margin-top: 10px;
+  margin-left: 10px;
+  border-width: 0px;
+  border-left: 10px;
+  color: black;
+  padding: 5px;
+  width: 12%;
+}
+
+#new-question-button:hover {
+  background-image: conic-gradient(from 90deg at 82.04% 107.20%, #000000  182.4640703201294deg, #000000A1 360deg);
+  color: #FAFAFA;
+}
+
+.type-1 {
+  border-radius:10px;
+  border: 1px solid #eee;
+  transition: .3s border-color;
+}
+.type-1:hover {
+  border: 1px solid #aaa;
+}
+
+#new-exam-container {
+  padding-left: 10px;
+  padding-top: 10px;
+
+}
+
+#exam-grade {
+  object-position: center;
+  margin-left: auto;
+}
+
+#exam_info {
+  flex-direction: column;
+}
+
+.grade {
+  object-position: center;
+  text-decoration: none;
+  color: #000000;
+  margin-bottom: 30px;
+  margin-left: 15px;
 }

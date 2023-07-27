@@ -19,14 +19,13 @@ app.use(sessions(session_settings));
 app.use("/", usersRouter)
 app.use("/admin", adminRouter)
 
-/* 
+/*
    For security reasons.
    Handle unmapped addresses
 */
 app.use((req,res,next) => {
     res.render('user/404.ejs');
 });
-   
 
 http.createServer(app).listen(3000, async function () {
     // This is here only to test if database connection is setup correctly.

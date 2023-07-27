@@ -7,16 +7,35 @@
           <% if ( locals.top_message ) { %>
             <%- locals.top_message %>
               <% } %>
-                <div>
-                  <h1>Hello! 
-                    <% if ( locals.logged ) { %>
-                      You are logged in!
-                        <% } else{ %>
-                          Please log in.
-                            <% }%>
-                  </h1>
+                <div class="flex-container" id="new-exam-containter">
+                  <h1 id="exam-header"> Exams </h1>
+                  <a type="button" id="default-button" href="/new_exam"> ➕ Add new exam</a>
+                  <%# TODO: Add dynamic loading of exams available to a certain student. %>
                 </div>
 
-
+                <%# TODO: this is hardcoded, it will have to be replaced with a dynamic way to show submissions. %>
+                <%# TODO: move to student folder. %>
+                <div class="flex-container" id="exam-review">
+                  <div class="flex-container" id="exam_info">
+                    <% locals.exam_info.forEach(function(exam) { %>
+                      <!--<div class="flex-container flex-column"></div>-->
+                        <h4><%= exam.name %></h4>
+                        <h6><%= exam.start_date %></h6>
+                        <h6><%= exam.end_date %></h6>
+                        <div class="flex-container" id="submission">
+                          <a type="button" id="default-button" href="/submission"> 👀 See your submission</a>
+                          <a type="button" id="default-button" href="/summary"> 📄 See summary</a>
+                        </div>
+                      <!-- </div> -->
+                      <% }); %>
+                    <%# TODO: Add dynamic loading of info of exam. %>
+                  </div>
+                  <div class="flex-container" id="exam-grade">
+                    <h4>Grade</h4>
+                    <% locals.exam_info.forEach(function(exam) { %>
+                      <a class="grade"><%= exam.grade %></a>
+                      <% }); %>
+                  </div>
+                </div>
 
                 <%- include('./footer') %>

@@ -1,0 +1,21 @@
+
+    <%- include('./navbar_v1') %>
+
+                <div class="flex-container" id="new-exam-container">
+                    <form action="/createexam" method="POST">
+                        <label for="fname">Exam title:</label>
+                        <input type="text" id="exam-title" name="exam-title" class="type-1"><br><br>
+                        <label for="start-date">Start date:</label>
+                        <input type="datetime-local" id="start-time" name="start-date" class="type-1"><br><br>
+                        <label for="end-date">Start date:</label>
+                        <input type="datetime-local" id="end-time" name="end-date" class="type-1"><br><br>
+                        <input type="submit" value="Create exam" href="/landing_page">
+                      </form>
+                    </div>
+                <div class="flex-container" id="new-exam-containter"></div>
+                    <a id="new-question-button"> ➕ Add new question </a>
+                </div>
+
+
+
+                <%- include('./footer') %>
