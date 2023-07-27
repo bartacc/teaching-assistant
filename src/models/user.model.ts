@@ -1,4 +1,11 @@
-import {BelongsToMany, Column, HasMany, IsEmail, Model, Table, Unique} from "sequelize-typescript";
+import {BelongsToMany, Column, DataType, HasMany, IsEmail, Model, Table, Unique} from "sequelize-typescript";
+import { Exam } from "./exam.model";
+import { ExamSolution } from "./examSolution.model";
+
+export enum Role {
+    TEACHER = "TEACHER",
+    STUDENT = "STUDENT"
+}
 
 @Table
 export class User extends Model {
@@ -22,8 +29,11 @@ export class User extends Model {
     @Column
     birthday: Date;
 
-    @Column
-    gender: Gender;
+    @Column({
+        defaultValue: Role.STUDENT,
+        type: DataType.ENUM(...Object.values(Role))
+    })
+    role: Role;
 
     @Column
     country: string;
@@ -35,12 +45,11 @@ export class User extends Model {
     street: string;
 
     @Column
-    postalCode: string
-}
+    postalCode: string;
 
-export enum Gender {
-    Female = 0,
-    Male = 1,
-    Other = 2
-}
+    @HasMany(() => Exam)
+    exams: Exam[];
 
+    @HasMany(() => ExamSolution)
+    examSolutions: ExamSolution[];
+}

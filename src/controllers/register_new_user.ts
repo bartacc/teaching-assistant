@@ -1,4 +1,4 @@
-import {Gender, User} from "../models/user.model";
+import {Role, User} from "../models/user.model";
 
 const {validationResult } = require('express-validator');
 const argon2 = require('argon2');
@@ -15,7 +15,7 @@ async function registerUser(data) {
         passwordHash: passwordHash,
         phoneNumber: data.phoneNumber,
         birthday: new Date(data.birthdayDate),
-        gender: data.gender,
+        role: data.role,
         country: data.country,
         city: data.city,
         street: data.street_and_num,
@@ -24,17 +24,13 @@ async function registerUser(data) {
 
     await saveUser(newUser);
 }
+
 async function register(req, res){
-    //validation
     const errors = validationResult(req);
     if (errors.isEmpty()) {
         await registerUser(req.body);
       }
-    res.status(201).json({ errors: errors.array() }); //201 abysmy nie
+    res.status(201).json({ errors: errors.array() });
 }
-
-
-
-
 
 export default register;

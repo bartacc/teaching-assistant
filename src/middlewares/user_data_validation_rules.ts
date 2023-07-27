@@ -98,11 +98,11 @@ export const dataValidationRules= ()=>{
     .trim()
     .escape(),
 
-    check("gender")
+    check("role")
     .notEmpty()
-    .withMessage('Gender is empty')
+    .withMessage('Role is empty')
     .isLength({ max: 500 })
-    .withMessage('Gender too long')
+    .withMessage('Role too long')
     .trim()
     .escape(),
 
