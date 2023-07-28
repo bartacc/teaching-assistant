@@ -61,17 +61,29 @@
   margin-left: 915px;
 }
 
-#exam-header {
-  padding-left: 1%;
+.margin-left-right {
+  margin-left: 10px;
+  margin-right: 500px;
 }
 
+.margin-left-30px{
+  margin-left: 50px;
+}
+
+.margin-left-155px {
+  margin-left: 155px;
+}
 .flex-container {
   display: flex;
   flex-direction: row;
 }
 
-.flex-container > .flex-container {
+.flex-column {
   flex-direction: column;
+}
+
+.flex-content {
+  justify-content: space-evenly;
 }
 #exam-review {
   padding: 10px;
@@ -80,14 +92,7 @@
   gap: 16px;
 }
 
-#submission {
-  display: flex;
-  flex-direction: column;
-  object-position: right;
-  margin-left: auto;
-  gap: 7px;
-}
-#default-button {
+.default-button {
   border-radius: 10px;
   background-image: conic-gradient(from 180deg at 82.04% 107.20%, #FAFAFA  182.4640703201294deg, #FAFAFAA1 360deg);
   margin-left: auto;
@@ -101,7 +106,7 @@
   text-decoration: none;
 }
 
-#default-button:hover {
+.default-button:hover {
   background-image: conic-gradient(from 90deg at 82.04% 107.20%, #000000  182.4640703201294deg, #000000A1 360deg);
   color: #FAFAFA;
 }
@@ -152,5 +157,5 @@
   text-decoration: none;
   color: #000000;
   margin-bottom: 30px;
-  margin-left: 15px;
+  margin-left: 17px;
 }
